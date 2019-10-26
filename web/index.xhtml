@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:jsf="http://xmlns.jcp.org/jsf"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <meta charset="utf-8"/>
+        <title>Calcula el promedio de 5 materias</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    </h:head>
+    <h:body>
+        <form jsf:prependId="false">
+            <h:messages globalOnly="true" style="color: blue"/>
+            <h1>Calcula el promedio</h1>
+            <h:outputText value="Ingresa tus calificaciones" />
+            <p>
+                <h:outputLabel value="Matematicas:" for="matematicas" /><br/>
+                <input jsf:id="matematicas" type="number" placeholder="Matematicas" step="0.01"
+                       jsf:required="true" jsf:value="#{ctrlPromedio.matematicas}" jsf:requiredMessage="¡Este campo es requerido!"
+                       jsf:validatorMessage="Debe ingresar una calificacion de 0 a 10 ¡solo numeros!"
+                       >  <f:validateDoubleRange minimum="0" maximum="10" for="matematicas"/>
+                </input>
+                <h:message for="matematicas"/>
+            </p>
+            <p>
+                <h:outputLabel value="Ingles:" for="ingles" /><br/>
+
+                <input jsf:id="ingles" type="number" placeholder="Ingles" step="0.01"
+                       jsf:required="true" jsf:value="#{ctrlPromedio.ingles}" jsf:requiredMessage="¡Este campo es requerido!"
+                       jsf:validatorMessage="Debe ingresar una calificacion de 0 a 10 ¡solo numeros!" 
+                       >  <f:validateDoubleRange minimum="0" maximum="10" for="ingles"/>
+
+                </input>
+
+                <h:message for="ingles"/>
+            </p>
+            <p>
+                <h:outputLabel value="Historia:" for="historia" /><br/>
+
+                <input jsf:id="historia" type="number" placeholder="Historia" step="0.01"
+                       jsf:required="true" jsf:value="#{ctrlPromedio.historia}" jsf:requiredMessage="¡Este campo es requerido!"
+                       jsf:validatorMessage="Debe ingresar una calificacion de 0 a 10 ¡solo numeros!"
+                       >  <f:validateDoubleRange minimum="0" maximum="10" for="historia"/>
+                </input>
+
+                <h:message for="historia"/>
+            </p>
+            <p>
+                <h:outputLabel value="Geografia:" for="geografia" /><br/>
+
+                <input jsf:id="geografia" type="number" placeholder="Geografia" step="0.01"
+                       jsf:required="true" jsf:value="#{ctrlPromedio.geografia}" jsf:requiredMessage="¡Este campo es requerido!"
+                       jsf:validatorMessage="Debe ingresar una calificacion de 0 a 10 ¡solo numeros!"
+                       >  <f:validateDoubleRange minimum="0" maximum="10" for="geografia"/>
+                </input>
+
+                <h:message for="geografia"/>
+            </p>
+            <p>
+                <h:outputLabel value="Español:" for="espaniol" /><br/>
+
+                <input jsf:id="espaniol" type="number" placeholder="Español" step="0.01"
+                       jsf:required="true" jsf:value="#{ctrlPromedio.espaniol}" jsf:requiredMessage="¡Este campo es requerido!"
+                       jsf:validatorMessage="Debe ingresar una calificacion de 0 a 10 ¡solo numeros!"
+                       >  <f:validateDoubleRange minimum="0" maximum="10" for="espaniol"/>
+                </input>
+
+                <h:message for="espaniol"/>
+            </p>
+            <p>
+                <button jsf:action="#{ctrlPromedio.calculaPromedio()}">Calcular promedio</button>
+            </p>
+
+        </form>
+    </h:body>
+</html>
+
